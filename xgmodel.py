@@ -29,7 +29,6 @@ s['angle'] = (90-np.angle(s['to_goalline'] + 1j*s['to_centre'], deg=True))/90
 # Add variables for inverse of distance & angle and the interaction term, avoiding null values
 s['inv_distance'] = np.where(s['distance'] > 0, 1/s['distance'], 99999999)
 s['inv_angle'] = np.where(s['angle'] > 0, 1/s['angle'], 99999999)
-s['inv_dist_angle'] = np.where((s['distance'] > 0) & (s['angle'] > 0), 1/(s['distance']*s['angle']), 99999999)
 
 # Create datasets for subsets of shots we will need, these are:
 # Footed non-cross open-play shots (reg)
